@@ -14,7 +14,7 @@ function Mark() {
 }
 
 export default function App() {
-  const [api, setApi] = useState({ state: 'checking', message: 'Checking local API…' });
+  const [api, setApi] = useState({ state: 'checking', message: 'Checking services…' });
   const [user, setUser] = useState(null);
   const [view, setView] = useState('login');
   const [busy, setBusy] = useState(false);
@@ -166,7 +166,7 @@ export default function App() {
           </>}
           {user.role === 'admin' && <div className="foundation-note"><span className="note-line" /><p>Admin tools are being connected to the approved attendance data.</p></div>}
         </section>
-        <footer className="footer"><span>Municipal Employee Attendance System</span><span>Asia/Manila · Local workspace</span></footer>
+      <footer className="footer"><span>Municipal Employee Attendance System</span><span>Asia/Manila</span></footer>
       </main>
     );
   }
@@ -178,7 +178,7 @@ export default function App() {
           <Mark />
           <span><strong>Municipal Workforce</strong><small>ATTENDANCE & ANALYTICS</small></span>
         </a>
-        <span className="environment"><span /> Local development</span>
+        <span className="environment"><span /> Municipal portal</span>
       </header>
 
       <section className="welcome" aria-labelledby="page-title">
@@ -216,10 +216,10 @@ export default function App() {
             </button>
           </div>
         </div>
-        <div className="api-indicator"><span className={`api-dot ${api.state}`} />{api.state === 'online' ? 'Local services connected' : api.state === 'checking' ? api.message : 'Local services disconnected'}</div>
+        <div className="api-indicator"><span className={`api-dot ${api.state}`} />{api.state === 'online' ? 'Services connected' : api.state === 'checking' ? api.message : 'Services unavailable'}</div>
       </section>
 
-      <footer className="footer"><span>Municipal Employee Attendance System</span><span>Asia/Manila · Local workspace</span></footer>
+        <footer className="footer"><span>Municipal Employee Attendance System</span><span>Asia/Manila</span></footer>
     </main>
   );
 }
